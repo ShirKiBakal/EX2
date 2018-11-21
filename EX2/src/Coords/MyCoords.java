@@ -32,8 +32,11 @@ public class MyCoords implements coords_converter {
 	}
 
 	public double[] azimuth_elevation_dist(Point3D gps0, Point3D gps1) {
-		// TODO Auto-generated method stub
-		return null;
+		double[] arr = new double[3];
+		arr[0] = gps0.north_angle(gps1);
+		arr[1] = gps0.up_angle(gps1);
+		arr[2]=this.distance3d(gps0, gps1);
+		return arr;
 	}
 
 	public boolean isValid_GPS_Point(Point3D p) {
