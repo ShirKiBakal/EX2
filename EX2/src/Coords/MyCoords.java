@@ -24,8 +24,11 @@ public class MyCoords implements coords_converter {
 	}
 
 	public Point3D vector3D(Point3D gps0, Point3D gps1) {
-		// TODO Auto-generated method stub
-		return null;
+		double x = Math.abs(gps0.x()-gps1.x());
+		double y = Math.abs(gps0.y()-gps1.y());
+		double z = Math.abs(gps0.z()-gps1.z());
+		Point3D ans = new Point3D(x,y,z);
+		return ans;
 	}
 
 	public double[] azimuth_elevation_dist(Point3D gps0, Point3D gps1) {
