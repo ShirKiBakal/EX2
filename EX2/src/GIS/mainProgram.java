@@ -8,8 +8,8 @@ public class mainProgram {
 
 	public static void main(String[] args) throws IOException {
 
-		CSVReader csv = new CSVReader("C:\\Users\\Elyasaf\\Downloads\\‏‏תיקיה חדשה\\Ex2\\data\\WigleWifi_20171201110209.csv");
-		System.out.println(csv.readFromCSV());
+		MetaData md = new MetaData("asd", "asd", "asd", "asd", "asd", "asd", "asd", "asd");
+		System.out.println(md.getUTC());
 		
 	}
 

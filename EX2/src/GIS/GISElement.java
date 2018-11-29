@@ -5,10 +5,34 @@ import Geom.Point3D;
 
 public class GISElement implements GIS_element{
 
-	MetaData md; 
-	Point3D p; 
-	String arr[];
+	private MetaData md; 
+	private Point3D p; 
+	private String arr[];
 	
+	public MetaData getMd() {
+		return md;
+	}
+
+	public void setMd(MetaData md) {
+		this.md = md;
+	}
+
+	public Point3D getP() {
+		return p;
+	}
+
+	public void setP(Point3D p) {
+		this.p = p;
+	}
+
+	public String[] getArr() {
+		return arr;
+	}
+
+	public void setArr(String[] arr) {
+		this.arr = arr;
+	}
+
 	public GISElement(String str)
 	{
 		arr=str.split(",");

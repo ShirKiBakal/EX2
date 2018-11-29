@@ -6,7 +6,7 @@ import java.util.Iterator;
 
 public class GISProject implements GIS_project {
 
-	ArrayList<GIS_layer> arr = new ArrayList<>();
+	private ArrayList<GIS_layer> arr = new ArrayList<>();
 	
 	public void print()
 	{
