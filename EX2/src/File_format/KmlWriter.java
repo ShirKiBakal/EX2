@@ -38,9 +38,6 @@ public class KmlWriter {
 				{
 					GISElement elm = (GISElement)iter_element.next();
 					writer.write("<Placemark>\n");
-					//writer.write("<TimeStamp>\n");
-					//writer.write("<when>"+elm.getMd().getUTC()+"</when>\n");
-					//writer.write("</TimeStamp>\n");
 					writer.write("<name>"+"<![CDATA["+elm.getMd().getSSID()+"]]>"  +"</name>\n");
 					writer.write("<description>"+"<![CDATA[BSSID: <b>"+elm.getMd().getMAC()+"</b><br/>Capabilities: <b>"+elm.getMd().getAuthMode()+"</b><br/>Timestamp: <b>"+elm.getMd().getUTC()+"</b><br/>Channel: <b>"+elm.getMd().getChannel()+"</b><br/>RSSI: <b>"+elm.getMd().getRSSI()+"</b><br/>AltitudeMeters: <b>"+elm.getP().z()+"</b><br/>AccuracyMeters: <b>"+elm.getMd().getAccuracyMeters()+"</b><br/>Type: <b>"+elm.getMd().getType()+"</b><br/>Date: <b>"+elm.getMd().getFirstSeen()+"</b>]]>"+"</description><styleUrl>#blue</styleUrl>\n");
 					writer.write("<Point>\n");
