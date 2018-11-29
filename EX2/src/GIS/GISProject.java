@@ -81,8 +81,7 @@ return arr.toArray(arg0);
 
 	@Override
 	public Meta_data get_Meta_data() {
-		// TODO Auto-generated method stub
-		return null;
+		return this.arr.get(0).get_Meta_data();
 	}
 
 }

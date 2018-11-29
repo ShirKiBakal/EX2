@@ -42,8 +42,7 @@ public class GISElement implements GIS_element{
 	
 	@Override
 	public Geom_element getGeom() {
-		
-		return null;
+		return (Geom_element)this;
 	}
 
 

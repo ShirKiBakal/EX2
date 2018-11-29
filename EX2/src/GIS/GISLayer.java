@@ -90,8 +90,7 @@ public class GISLayer implements GIS_layer {
 
 	@Override
 	public Meta_data get_Meta_data() {
-		//TODO
-		return null;
+		return this.arr.get(0).getData();
 	}
 
 }
