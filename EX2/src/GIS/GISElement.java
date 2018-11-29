@@ -42,19 +42,17 @@ public class GISElement implements GIS_element{
 	
 	@Override
 	public Geom_element getGeom() {
-	//TODO 	
+		
 		return null;
 	}
 
-	@Override
+
 	public Meta_data getData() {
 		return md;
 		
 	}
 
-	@Override
 	public void translate(Point3D vec) {
-		// TODO Auto-generated method stub
 		
 	}
 
