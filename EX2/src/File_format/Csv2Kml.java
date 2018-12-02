@@ -6,17 +6,33 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 
+/**
+ * this function gets to paths, one for in and one for out, and convert one CSV file to one kml file
+ * @author Shiran.b
+ *
+ */
 public class Csv2Kml {
+	
 	private final BufferedWriter writer;
 	private final BufferedReader reader;
 	private String headers[]=null;
 
+	/**
+	 * constructor, firs must get the CSV path and the second String is the destenation Path.
+	 * @param input
+	 * @param output
+	 * @throws IOException
+	 */
 	public Csv2Kml(String input, String output)throws IOException
 	{
 		reader = new BufferedReader(new FileReader(input));
 		writer = new BufferedWriter(new FileWriter(output));
 	}
 	
+	/**
+	 * returns the "headres" row of the CSV file.
+	 * @return
+	 */
 	public String[] getHeaders(){
 		if(headers==null)
 		{
@@ -25,20 +41,16 @@ public class Csv2Kml {
 		return headers;
 	}
 	
+	/**
+	 * this function activated the creation of the kml file from the csv file
+	 * @throws IOException
+	 */
 	public void run() throws IOException {
 		try {
 			reader.readLine(); // skip 1st line
 			String str = reader.readLine();
 			String[] headers = str.split(",");
 			this.headers=headers;
-			//String[] parsedTime = headers[1].split(":");
-			//int lastHour = Integer.parseInt(parsedTime[0].trim());
-			//int lastMinute = Integer.parseInt(parsedTime[1].trim());
-
-			//String hh = getHH(headers[1]);
-			//writeIcon(hh, headers[3], headers[2]);
-			//writePlacemarkStart(hh);
-			//writer.write(headers[3] + "," + headers[2] + ", 0.0\n");
 			writer.write("<?xml version=\"1.0\" encoding=\"UTF-8\"?>\n");
 			writer.write("<kml xmlns=\"http://www.opengis.net/kml/2.2\"><Document><Style id=\"red\"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/red-dot.png</href></Icon></IconStyle></Style><Style id=\"yellow\"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/yellow-dot.png</href></Icon></IconStyle></Style><Style id=\"green\"><IconStyle><Icon><href>http://maps.google.com/mapfiles/ms/icons/green-dot.png</href></Icon></IconStyle></Style><Folder><name>Wifi Networks</name>\n");
 			while ((str = reader.readLine()) != null)

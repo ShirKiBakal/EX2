@@ -12,17 +12,37 @@ import GIS.GISProject;
 import GIS.GIS_element;
 import GIS.GIS_layer;
 
+/**
+ * this class gets a GIS Project and write it to a KML file.
+ * @author Shiran.b
+ *
+ */
 public class KmlWriter {
 
 	private final BufferedWriter writer;
 
+	/**
+	 * constructor, must run it first in order for the writer to have a destination file.
+	 * @param output
+	 * @throws IOException
+	 */
 	public KmlWriter(String output)throws IOException
 	{
 		writer = new BufferedWriter(new FileWriter(output));
 	}
 
+	/**
+	 * this function write the Project to KML, it does double iteration, one on the layer, and one on the element
+	 * and writes each element at a time to the kml file.
+	 * the constructor must run before this!
+	 * @param project
+	 */
 	public void writeStringToKML(GISProject project)
 	{
+		if(this.writer == null)
+		{
+			throw new RuntimeException("contractor must be run first!");
+		}
 		
 		Iterator<GIS_layer> iter_layer = project.iterator();
 	

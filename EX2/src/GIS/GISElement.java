@@ -3,6 +3,11 @@ package GIS;
 import Geom.Geom_element;
 import Geom.Point3D;
 
+/**
+ * this class represent Gis Element, each element is a 3dPoint and her Metadata.
+ * @author Shiran.b
+ *
+ */
 public class GISElement implements GIS_element{
 
 	private MetaData md; 
@@ -32,7 +37,11 @@ public class GISElement implements GIS_element{
 	public void setArr(String[] arr) {
 		this.arr = arr;
 	}
-
+	
+	/**
+	 * the constractor, get a row from the CSV and split it to the right places
+	 * @param str
+	 */
 	public GISElement(String str)
 	{
 		arr=str.split(",");

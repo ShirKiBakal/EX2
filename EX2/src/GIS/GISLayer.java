@@ -4,21 +4,26 @@ import java.util.ArrayList;
 import java.util.Collection;
 import java.util.Iterator;
 
-
+/**
+ * this class represent a CSV file, each row of the CSV is represented by GIS Element stored in ArrayList.
+ * @author Shiran.b
+ *
+ */
 public class GISLayer implements GIS_layer {
 
 
 	private ArrayList<GIS_element> arr = new ArrayList<>();
 
-
+	/**
+	 * constracot of the Layer, must get an Array of Element.
+	 * @param arr2
+	 */
 	public GISLayer(ArrayList<GISElement> arr2) // gets the whole string from a file using Csv2Kml.readFromCsv()
 	{
 		for (int i = 0; i < arr2.size(); i++) {
 			this.arr.add(arr2.get(i));
-		}	
-
+		}
 	}
-
 
 	@Override
 	public boolean add(GIS_element e) {

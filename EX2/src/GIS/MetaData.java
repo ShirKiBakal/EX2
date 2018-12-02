@@ -1,10 +1,14 @@
 package GIS;
 
-import java.time.Instant;
 import java.util.Date;
 
 import Geom.Point3D;
 
+/**
+ * This implement the special characteristics of a 3dPoint
+ * @author Shiran.b
+ *
+ */
 public class MetaData implements Meta_data{
 
 	private String MAC;
@@ -14,6 +18,8 @@ public class MetaData implements Meta_data{
 	private String Channel;
 	private String RSSI;
 	private long time;
+	private String AccuracyMeters;
+	private String Type;
 	
 	public long getTime() {
 		return time;
@@ -87,9 +93,18 @@ public class MetaData implements Meta_data{
 		Type = type;
 	}
 
-	String AccuracyMeters;
-	String Type;
-
+	
+	/**
+	 * Constracor, must get all data from CSV file row
+	 * @param m
+	 * @param s
+	 * @param a2
+	 * @param f
+	 * @param c
+	 * @param r
+	 * @param a3
+	 * @param t
+	 */
 	public MetaData(String m,String s,String a2,String f,String c,String r, String a3, String t)
 	{
 		MAC=m;
@@ -104,7 +119,10 @@ public class MetaData implements Meta_data{
 		
 	}
 
-	@Override
+
+	/**
+	 * get "long" format representation of the UTC time now.
+	 */
 	public long getUTC() {
 		Long time = new Date().getTime();
 		return time;
