@@ -15,8 +15,6 @@ import GIS.GISProject;
 public class MultiCSV {
 	
 	private ArrayList<String> files;
-	private BufferedWriter writer;
-	private BufferedReader reader;
 	private GISProject project; 
 	
 	public GISProject getGISProject()

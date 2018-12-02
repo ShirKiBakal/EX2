@@ -8,7 +8,7 @@ import java.util.Iterator;
 public class GISLayer implements GIS_layer {
 
 
-	ArrayList<GIS_element> arr = new ArrayList<>();
+	private ArrayList<GIS_element> arr = new ArrayList<>();
 
 
 	public GISLayer(ArrayList<GISElement> arr2) // gets the whole string from a file using Csv2Kml.readFromCsv()

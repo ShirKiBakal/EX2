@@ -3,7 +3,6 @@ package File_format;
 import java.io.BufferedWriter;
 import java.io.FileWriter;
 import java.io.IOException;
-import java.util.Date;
 import java.util.Iterator;
 
 
@@ -39,7 +38,7 @@ public class KmlWriter {
 					GISElement elm = (GISElement)iter_element.next();
 					writer.write("<Placemark>\n");
 					writer.write("<name>"+"<![CDATA["+elm.getMd().getSSID()+"]]>"  +"</name>\n");
-					writer.write("<description>"+"<![CDATA[BSSID: <b>"+elm.getMd().getMAC()+"</b><br/>Capabilities: <b>"+elm.getMd().getAuthMode()+"</b><br/>Timestamp: <b>"+elm.getMd().getUTC()+"</b><br/>Channel: <b>"+elm.getMd().getChannel()+"</b><br/>RSSI: <b>"+elm.getMd().getRSSI()+"</b><br/>AltitudeMeters: <b>"+elm.getP().z()+"</b><br/>AccuracyMeters: <b>"+elm.getMd().getAccuracyMeters()+"</b><br/>Type: <b>"+elm.getMd().getType()+"</b><br/>Date: <b>"+elm.getMd().getFirstSeen()+"</b>]]>"+"</description><styleUrl>#blue</styleUrl>\n");
+					writer.write("<description>"+"<![CDATA[BSSID: <b>"+elm.getMd().getMAC()+"</b><br/>Capabilities: <b>"+elm.getMd().getAuthMode()+"</b><br/>Timestamp: <b>"+elm.getMd().getTime()+"</b><br/>Channel: <b>"+elm.getMd().getChannel()+"</b><br/>RSSI: <b>"+elm.getMd().getRSSI()+"</b><br/>AltitudeMeters: <b>"+elm.getP().z()+"</b><br/>AccuracyMeters: <b>"+elm.getMd().getAccuracyMeters()+"</b><br/>Type: <b>"+elm.getMd().getType()+"</b><br/>Date: <b>"+elm.getMd().getFirstSeen()+"</b>]]>"+"</description><styleUrl>#blue</styleUrl>\n");
 					writer.write("<Point>\n");
 					writer.write("<coordinates>"+elm.getP().y()+","+elm.getP().x()+"</coordinates></Point>\n");
 					writer.write("</Placemark>\n");

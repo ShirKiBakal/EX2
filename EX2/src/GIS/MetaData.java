@@ -13,6 +13,15 @@ public class MetaData implements Meta_data{
 	private String FirstSeen;
 	private String Channel;
 	private String RSSI;
+	private long time;
+	
+	public long getTime() {
+		return time;
+	}
+
+	public void setTime(long time) {
+		this.time = time;
+	}
 	
 	public String getMAC() {
 		return MAC;
@@ -91,6 +100,7 @@ public class MetaData implements Meta_data{
 		RSSI=r;
 		AccuracyMeters=a3;
 		Type=t;
+		time=this.getUTC();
 		
 	}
 

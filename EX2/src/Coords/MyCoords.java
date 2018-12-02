@@ -5,7 +5,7 @@ import Geom.Point3D;
 
 public class MyCoords implements coords_converter{
 
-	final int earth_radius = 6371000;
+	private final int earth_radius = 6371000;
 
 	@Override
 	public Point3D add(Point3D gps, Point3D local_vector_in_meter) {
